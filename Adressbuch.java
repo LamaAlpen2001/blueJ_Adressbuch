@@ -48,4 +48,8 @@ public class Adressbuch{
       }
       adressliste.append(pKontakt);
     }
+    
+    public void suche(){
+      // Hier kannst du was schreiben, Erik!
+    }
 }
