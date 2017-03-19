@@ -49,7 +49,29 @@ public class Adressbuch{
       adressliste.append(pKontakt);
     }
     
-    public void suche(){
-      // Hier kannst du was schreiben, Erik!
+    public void suche(String pSuche){
+      if(!adressliste.isEmpty() && pSuche != null){
+        adressliste.toFirst();  
+        boolean gleich = true;
+        int i = 0;
+        while(adressliste.hasAccess()){
+          while(gleich == true && i<pSuche.length()-1){
+            if(pSuche.charAt(i) == adressliste.getContent().getName().charAt(i)){
+              i = i+1;
+            }
+            else{
+              gleich = false;
+            }
+          }
+          if(gleich == true){
+            System.out.println(adressliste.getContent().getName()+ ": ");
+            System.out.println(adressliste.getContent().getTelenr());
+          }
+          adressliste.next();
+        }  
+      }
+      else{
+        System.out.println("Keine Suche eingegeben.");
+      }
     }
 }
