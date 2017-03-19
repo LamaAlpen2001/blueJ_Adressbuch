@@ -19,20 +19,29 @@ public class Adressbuch{
     }
     
     public void nummerAnzeigen(String pName){
-     if(!adressliste.isEmpty()){
+     if(!adressliste.isEmpty() && pName!= null){
        adressliste.toFirst();
-       while(adressliste.hasAccess() || adressliste.getContent().getName().equals(pName)){
-         adressliste.next(); 
+       boolean zugang = adressliste.hasAccess();
+       boolean namegef = false;
+       while(zugang == true && namegef == false){
+        if(!adressliste.hasAccess()){
+          zugang = false;
+        }
+        if(adressliste.getContent().getName().equals(pName)){
+          namegef = true;
+        }
        }
        if(adressliste.hasAccess()){
-        System.out.println(adressliste.getContent().getName()+ ": ");
-        System.out.println(adressliste.getContent().getTelenr());
+         System.out.println(adressliste.getContent().getName()+ ": ");
+         System.out.println(adressliste.getContent().getTelenr());
        }
        else{
          System.out.println("Der Name wurde nicht gefunden."); 
        }
      }
-     System.out.println("Liste ist leer!");
+     else{
+       System.out.println("Liste ist leer!");
+     }
     }
     
     public void sortiertEinfuegen(Kontakt pKontakt){
