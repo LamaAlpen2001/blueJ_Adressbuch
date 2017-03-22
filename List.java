@@ -1,5 +1,28 @@
+ /**
+ * <p>
+ * Materialien zu den zentralen NRW-Abiturpruefungen im Fach Informatik ab 2017.
+ * </p>
+ * <p>
+ * Generische Klasse List<ContentType>
+ * </p>
+ * <p>
+ * Objekt der generischen Klasse List verwalten beliebig viele linear
+ * angeordnete Objekte vom Typ ContentType. Auf hoechstens ein Listenobjekt,
+ * aktuellesObjekt genannt, kann jeweils zugegriffen werden.<br />
+ * Wenn eine Liste leer ist, vollstaendig durchlaufen wurde oder das aktuelle
+ * Objekt am Ende der Liste geloescht wurde, gibt es kein aktuelles Objekt.<br />
+ * Das erste oder das letzte Objekt einer Liste koennen durch einen Auftrag zum
+ * aktuellen Objekt gemacht werden. Ausserdem kann das dem aktuellen Objekt
+ * folgende Listenobjekt zum neuen aktuellen Objekt werden. <br />
+ * Das aktuelle Objekt kann gelesen, veraendert oder geloescht werden. Ausserdem
+ * kann vor dem aktuellen Objekt ein Listenobjekt eingefuegt werden.
+ * </p>
+ * 
+ * @author Qualitaets- und UnterstuetzungsAgentur - Landesinstitut fuer Schule, Materialien zum schulinternen Lehrplan Informatik SII
+ * @version Generisch_06 2015-10-25
+ */
 public class List<ContentType> {
-  
+
   /* --------- Anfang der privaten inneren Klasse -------------- */
 
   private class ListNode {
