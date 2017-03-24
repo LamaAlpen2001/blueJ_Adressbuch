@@ -5,7 +5,7 @@ PROJEKTZWECK:
 Schule/InfoLK
 
 VERSION oder DATUM:
-Aktuelle Version: 24.03.2017; 15:19 (MEZ)
+Aktuelle Version: 24.03.2017; 16:53 (MEZ)
 
 WIE IST DAS PROJEKT ZU STARTEN:
 Öffnen mit derzeit mit dem Java-Editor.
@@ -13,6 +13,4 @@ WIE IST DAS PROJEKT ZU STARTEN:
 AUTOREN:
 Paul Jakob Seidenstuecker; Erik Nahthrath
 
-BENUTZERHINWEISE:
-Das BlueJ-package ist veraltet und damit nicht nutzbar.
-The BlueJ-package is not the newest version. So don´t use it.
+BENUTZERHINWEISE:-
