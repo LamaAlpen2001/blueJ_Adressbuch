@@ -1,20 +1,24 @@
 public class Adressbuch{
     private List<Kontakt> adressliste;
+    private List<Kontakt> ergebnisse;
 
     public Adressbuch(){
      adressliste = new List();
-     adressliste.append(new Kontakt("Anna", 49345836));
-     adressliste.append(new Kontakt("Bernt", 49778034));
-     adressliste.append(new Kontakt("Justin", 493466645));
-     adressliste.append(new Kontakt("Gustav", 49367854));
-     adressliste.append(new Kontakt("Klara", 49985673));
-     adressliste.append(new Kontakt("Richard", 496762543));
-     adressliste.append(new Kontakt("Lena", 49446721));
-     adressliste.append(new Kontakt("Ole", 49763382));
-     adressliste.append(new Kontakt("Sara", 49113573));
-     adressliste.append(new Kontakt("Emil", 49200173));
     }
-
+    
+    public void TestKontakte(){
+      adressliste.append(new Kontakt("Anna", 49345836));
+      adressliste.append(new Kontakt("Bernt", 49778034));
+      adressliste.append(new Kontakt("Justin", 493466645));
+      adressliste.append(new Kontakt("Gustav", 49367854));
+      adressliste.append(new Kontakt("Klara", 49985673));
+      adressliste.append(new Kontakt("Richard", 496762543));
+      adressliste.append(new Kontakt("Lena", 49446721));
+      adressliste.append(new Kontakt("Ole", 49763382));
+      adressliste.append(new Kontakt("Sara", 49113573));
+      adressliste.append(new Kontakt("Emil", 49200173));
+    }
+    
     /*public void kontaktHinzufuegen(Kontakt pKontakt){
         adressliste.append(pKontakt);  
     }*/
@@ -32,9 +36,10 @@ public class Adressbuch{
      System.out.println("Liste ist leer!");
     }
     
-    public void nummerAnzeigen(String pName){
-     if(!adressliste.isEmpty() && pName!= null){
+    public String nummerAnzeigen(String pName){
+    if(!adressliste.isEmpty() && pName!= null){
        adressliste.toFirst();
+       String h = "Kein Kontakt gefunden.";
        boolean zugang = adressliste.hasAccess();
        boolean namegef = false;
        while(zugang == true && namegef == false){
@@ -46,35 +51,40 @@ public class Adressbuch{
         }
        }
        if(adressliste.hasAccess()){
-         System.out.println(adressliste.getContent().getName()+ ": ");
-         System.out.println(adressliste.getContent().getTelenr());
+         return(adressliste.getContent().getName() + adressliste.getContent().getTelenr());
        }
        else{
-         System.out.println("Der Name wurde nicht gefunden."); 
+         return h;
        }
      }
      else{
-       System.out.println("Liste ist leer!");
+       String i = "Keine Suche angegeben.";
+       return i;
      }
     }
     
-    public void sortiertEinfuegen(String pName , int pNummer){
+    public String sortiertEinfuegen(String pName , int pNummer){
       Kontakt pKontakt = new Kontakt(pName, pNummer);
-        if(!adressliste.isEmpty()){
+      String h = "Neuer Kontakt eingefügt.";
+      if(!adressliste.isEmpty()){
         adressliste.toFirst();
         while(adressliste.hasAccess() && adressliste.getContent().getName().compareTo(pName)<0){
           adressliste.next();  
         }
         if(adressliste.hasAccess()){
-         adressliste.insert(pKontakt); 
+         adressliste.insert(pKontakt);
         }
       }
-      adressliste.append(pKontakt);
+      else{
+        adressliste.append(pKontakt);
+      }
+      return h;
     }
     
-    public void suche(String pSuche){
+    public String suche(String pSuche){
       if(!adressliste.isEmpty() && pSuche != null){
-        adressliste.toFirst();  
+        adressliste.toFirst();
+        String x = ""; 
         boolean gleich = true;
         int i = 0;
         while(adressliste.hasAccess()){
@@ -87,14 +97,15 @@ public class Adressbuch{
             }
           }
           if(gleich == true){
-            System.out.println(adressliste.getContent().getName()+ ": ");
-            System.out.println(adressliste.getContent().getTelenr());
+            x = x + adressliste.getContent().getName() + ": " + adressliste.getContent().getTelenr() + "; ";
           }
           adressliste.next();
-        }  
+        }
+         
+        return x; 
       }
       else{
-        System.out.println("Keine Suche eingegeben.");
+        return null;
       }
     }
 }
