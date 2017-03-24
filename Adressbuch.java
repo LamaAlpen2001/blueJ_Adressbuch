@@ -5,17 +5,19 @@ public class Adressbuch{
      adressliste = new List();
     }
     
-    public void TestKontakte(){
+    public String testKontakteErstellen(){
       adressliste.append(new Kontakt("Anna", 49345836));
       adressliste.append(new Kontakt("Bernt", 49778034));
-      adressliste.append(new Kontakt("Justin", 493466645));
+      adressliste.append(new Kontakt("Emil", 49200173));
       adressliste.append(new Kontakt("Gustav", 49367854));
+      adressliste.append(new Kontakt("Justin", 493466645));
       adressliste.append(new Kontakt("Klara", 49985673));
-      adressliste.append(new Kontakt("Richard", 496762543));
       adressliste.append(new Kontakt("Lena", 49446721));
       adressliste.append(new Kontakt("Ole", 49763382));
+      adressliste.append(new Kontakt("Richard", 496762543));
       adressliste.append(new Kontakt("Sara", 49113573));
-      adressliste.append(new Kontakt("Emil", 49200173));
+      String x = "Testadressbuch erstellt.";
+      return x;
     }
     
     /*public void kontaktHinzufuegen(Kontakt pKontakt){
@@ -81,9 +83,10 @@ public class Adressbuch{
     }
     
     public String suche(String pSuche){
+      String y = "Kein Kontakt gefunden.";
       if(!adressliste.isEmpty() && pSuche != null){
         adressliste.toFirst();
-        String x = ""; 
+        String x = " "; 
         boolean gleich = true;
         int i = 0;
         while(adressliste.hasAccess()){
@@ -100,11 +103,42 @@ public class Adressbuch{
           }
           adressliste.next();
         }
+      if (x.equals(" ")) {
+          return y;
+      }
+        return x; 
+      }
+      else{
+        return y;
+      }
+    }
+    
+    public String loeschen(String pLoeschen){
+      String y = "Keinen Löschauftrag angegeben";
+      if(!adressliste.isEmpty() && pLoeschen != null){
+        adressliste.toFirst();
+        String x = "Kontakt gelöscht."; 
+        boolean gleich = true;
+        int i = 0;
+        while(adressliste.hasAccess()){
+          while(gleich == true && i<pLoeschen.length()-1){
+            if(pLoeschen.charAt(i) == adressliste.getContent().getName().charAt(i)){
+              i = i+1;
+            }
+            else{
+              gleich = false;
+            }
+          }
+          if(gleich == true){
+            adressliste.remove();
+          }
+          adressliste.next();
+        }
          
         return x; 
       }
       else{
-        return null;
-      }
+        return y;
+      } 
     }
 }
