@@ -3,10 +3,17 @@ public class Adressbuch{
 
     public Adressbuch(){
      adressliste = new List();
+     adressliste.append(new Kontakt("Anna", 49345836));
+     adressliste.append(new Kontakt("Bernt", 49778034));
+     adressliste.append(new Kontakt("Justin", 493466645));
     }
 
-    public void kontaktHinzufuegen(Kontakt pKontakt){
+    /*public void kontaktHinzufuegen(Kontakt pKontakt){
         adressliste.append(pKontakt);  
+    }*/
+    public void kontaktHinzufuegen(String pName, int pNummer){
+        Kontakt k = new Kontakt(pName, pNummer);
+        adressliste.append(k);
     }
     
     public void letztenKontaktloeschen(){
@@ -44,11 +51,11 @@ public class Adressbuch{
      }
     }
     
-    public void sortiertEinfuegen(Kontakt pKontakt){
-      if(!adressliste.isEmpty()){
+    public void sortiertEinfuegen(String pName , int pNummer){
+      Kontakt pKontakt = new Kontakt(pName, pNummer);
+        if(!adressliste.isEmpty()){
         adressliste.toFirst();
-        String name1 = pKontakt.getName();
-        while(adressliste.hasAccess() && adressliste.getContent().getName().compareTo(name1)<0){
+        while(adressliste.hasAccess() && adressliste.getContent().getName().compareTo(pName)<0){
           adressliste.next();  
         }
         if(adressliste.hasAccess()){
