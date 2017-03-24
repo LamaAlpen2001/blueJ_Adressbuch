@@ -1,86 +1,43 @@
 public class Adressbuch{
-    private List<Kontakt> adressliste;
-
+    private List<Kontakt> adressenListe;
     public Adressbuch(){
-     adressliste = new List();
+        adressenListe= new List();
     }
-
-    public void kontaktHinzufuegen(Kontakt pKontakt){
-        adressliste.append(pKontakt);  
+    public void kontaktHinzufuegen(Kontakt pKontakt)
+    {
+        adressenListe.append(pKontakt);
     }
-    
-    public void letztenKontaktloeschen(){
-     if(!adressliste.isEmpty()){
-        adressliste.toLast();
-        adressliste.remove();
-        System.out.println("Letzer Kontakt gelöscht");
-     }
-     System.out.println("Liste ist leer!");
+    public void letztenKontaktLoeschen()
+    {
+        if(!adressenListe.isEmpty()){
+        adressenListe.toLast();
+        adressenListe.remove();
+        System.out.println("letzter Kontakt gelöscht");
+      }
+      System.out.println("Liste ist leer");
     }
-    
     public void nummerAnzeigen(String pName){
-     if(!adressliste.isEmpty() && pName!= null){
-       adressliste.toFirst();
-       boolean zugang = adressliste.hasAccess();
-       boolean namegef = false;
-       while(zugang == true && namegef == false){
-        if(!adressliste.hasAccess()){
-          zugang = false;
-        }
-        if(adressliste.getContent().getName().equals(pName)){
-          namegef = true;
-        }
-       }
-       if(adressliste.hasAccess()){
-         System.out.println(adressliste.getContent().getName()+ ": ");
-         System.out.println(adressliste.getContent().getTelenr());
-       }
-       else{
-         System.out.println("Der Name wurde nicht gefunden."); 
-       }
-     }
-     else{
-       System.out.println("Liste ist leer!");
-     }
-    }
-    
-    public void sortiertEinfuegen(Kontakt pKontakt){
-      if(!adressliste.isEmpty()){
-        adressliste.toFirst();
-        String name1 = pKontakt.getName();
-        while(adressliste.hasAccess() && adressliste.getContent().getName().compareTo(name1)<0){
-          adressliste.next();  
-        }
-        if(adressliste.hasAccess()){
-         adressliste.insert(pKontakt); 
-        }
-      }
-      adressliste.append(pKontakt);
-    }
-    
-    public void suche(String pSuche){
-      if(!adressliste.isEmpty() && pSuche != null){
-        adressliste.toFirst();  
-        boolean gleich = true;
-        int i = 0;
-        while(adressliste.hasAccess()){
-          while(gleich == true && i<pSuche.length()-1){
-            if(pSuche.charAt(i) == adressliste.getContent().getName().charAt(i)){
-              i = i+1;
+       if(!adressenListe.isEmpty()){
+           adressenListe.toFirst();
+           while(adressenListe.hasAccess() || !adressenListe.getContent().getName().equals(pName)){
+               adressenListe.next();
             }
-            else{
-              gleich = false;
-            }
-          }
-          if(gleich == true){
-            System.out.println(adressliste.getContent().getName()+ ": ");
-            System.out.println(adressliste.getContent().getTelenr());
-          }
-          adressliste.next();
-        }  
-      }
-      else{
-        System.out.println("Keine Suche eingegeben.");
-      }
+           if(adressenListe.hasAccess()){
+            System.out.println(adressenListe.getContent().getName()+":");
+            System.out.println(adressenListe.getContent().getTeleNr());
+        }
+        else
+            System.out.println("Name nicht gefunden");
+       }
+      else
+        System.out.println("Liste ist leer");
+    }
+    public void sortiertEinfügen(Kontakt pKontakt){
+        if(!adressenListe.isEmpty()){
+            
+        }
+        else{
+            adressenListe.append(pKontakt);
+       }
     }
 }
