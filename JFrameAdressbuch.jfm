@@ -1,6 +1,6 @@
-object jFrameAdressbuch: TFGUIForm
-  Left = 54
-  Top = 10
+object JFrameAdressbuch: TFGUIForm
+  Left = 12
+  Top = -20
   BorderIcons = [biSystemMenu]
   Caption = 'Adressbuch'
   ClientHeight = 370
@@ -32,13 +32,13 @@ object jFrameAdressbuch: TFGUIForm
     Width = 137
     Height = 25
     Hint = 'jButton1'
-    Foreground = 3355443
-    Background = 15658734
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -12
     Font.Name = 'Dialog'
     Font.Style = [fsBold]
+    Foreground = 3355443
+    Background = 15658734
     actionPerformed = 'jButton1_ActionPerformed'
     Text = 'Suche'
     Mnemonic = 0
@@ -76,13 +76,13 @@ object jFrameAdressbuch: TFGUIForm
     Width = 137
     Height = 25
     Hint = 'jButton1'
-    Foreground = 3355443
-    Background = 15658734
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -12
     Font.Name = 'Dialog'
     Font.Style = [fsBold]
+    Foreground = 3355443
+    Background = 15658734
     actionPerformed = 'jButton2_ActionPerformed'
     Text = 'Nummer herausfinden'
     Mnemonic = 0
@@ -120,13 +120,13 @@ object jFrameAdressbuch: TFGUIForm
     Width = 137
     Height = 25
     Hint = 'jButton1'
-    Foreground = 3355443
-    Background = 15658734
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -12
     Font.Name = 'Dialog'
     Font.Style = [fsBold]
+    Foreground = 3355443
+    Background = 15658734
     actionPerformed = 'jButton3_ActionPerformed'
     Text = 'Kontakt einf'#252'gen'
     Mnemonic = 0
@@ -164,13 +164,13 @@ object jFrameAdressbuch: TFGUIForm
     Width = 110
     Height = 20
     Hint = 'jLabel1'
-    Foreground = 3355443
-    Background = clBtnFace
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -12
     Font.Name = 'Dialog'
     Font.Style = [fsBold]
+    Foreground = 3355443
+    Background = clBtnFace
     Text = 'Adressbuch'
     HorizontalAlignment = LEFT
     VerticalAlignment = CENTER
@@ -188,31 +188,13 @@ object jFrameAdressbuch: TFGUIForm
     Height = 25
     Cursor = crIBeam
     Hint = 'jTextField1'
-    Foreground = 3355443
-    Background = clWhite
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -12
     Font.Name = 'Dialog'
     Font.Style = []
-    HorizontalAlignment = LEFT
-    Editable = True
-  end
-  object jTextField2: TJTextField
-    Tag = 2
-    Left = 80
-    Top = 96
-    Width = 161
-    Height = 25
-    Cursor = crIBeam
-    Hint = 'jTextField1'
     Foreground = 3355443
     Background = clWhite
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -12
-    Font.Name = 'Dialog'
-    Font.Style = []
     HorizontalAlignment = LEFT
     Editable = True
   end
@@ -224,15 +206,14 @@ object jFrameAdressbuch: TFGUIForm
     Height = 97
     Cursor = crIBeam
     Hint = 'jTextArea1'
-    Foreground = 3355443
-    Background = clWhite
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -12
     Font.Name = 'Dialog'
     Font.Style = [fsBold]
+    Foreground = 3355443
+    Background = clWhite
     LineWrap = False
-    HorizontalAlignment = LEFT
     HorizontalScrollBarPolicy = AS_NEEDED
     VerticalScrollBarPolicy = AS_NEEDED
     WrapStyleWord = False
@@ -246,13 +227,13 @@ object jFrameAdressbuch: TFGUIForm
     Width = 67
     Height = 25
     Hint = 'jLabel2'
-    Foreground = 3355443
-    Background = clBtnFace
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -12
     Font.Name = 'Dialog'
     Font.Style = [fsBold]
+    Foreground = 3355443
+    Background = clBtnFace
     Text = 'Name'
     HorizontalAlignment = LEFT
     VerticalAlignment = CENTER
@@ -269,13 +250,13 @@ object jFrameAdressbuch: TFGUIForm
     Width = 67
     Height = 25
     Hint = 'jLabel3'
-    Foreground = 3355443
-    Background = clBtnFace
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -12
     Font.Name = 'Dialog'
     Font.Style = [fsBold]
+    Foreground = 3355443
+    Background = clBtnFace
     Text = 'Nummer'
     HorizontalAlignment = LEFT
     VerticalAlignment = CENTER
@@ -284,5 +265,23 @@ object jFrameAdressbuch: TFGUIForm
     IconTextGap = 4
     DisplayedMnemonic = 0
     DisplayedMnemonicIndex = 0
+  end
+  object jNumberField1: TJNumberField
+    Tag = 21
+    Left = 80
+    Top = 96
+    Width = 161
+    Height = 25
+    Cursor = crIBeam
+    Hint = 'jNumberField1'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Dialog'
+    Font.Style = []
+    Foreground = 3355443
+    Background = clWhite
+    HorizontalAlignment = LEFT
+    Editable = True
   end
 end

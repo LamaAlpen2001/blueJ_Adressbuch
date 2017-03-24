@@ -18,12 +18,12 @@ public class JFrameAdressbuch extends JFrame {
   private JButton jButton2 = new JButton();
   private JButton jButton3 = new JButton();
   private JTextField jTextField1 = new JTextField();
-  private JTextField jTextField2 = new JTextField();
   private JTextArea jTextArea1 = new JTextArea("");
     private JScrollPane jTextArea1ScrollPane = new JScrollPane(jTextArea1);
   private JLabel jLabel2 = new JLabel();
   private JLabel jLabel3 = new JLabel();
   private Adressbuch abuch = new Adressbuch();
+  private JNumberField jNumberField1 = new JNumberField();
   // Ende Attribute
   
   public JFrameAdressbuch() { 
@@ -66,7 +66,7 @@ public class JFrameAdressbuch extends JFrame {
     });
     cp.add(jButton2);
     jButton3.setBounds(88, 144, 137, 25);
-    jButton3.setText("Kontakt einfügen");
+    jButton3.setText("Kontakt einfuegen");
     jButton3.setMargin(new Insets(2, 2, 2, 2));
     jButton3.addActionListener(new ActionListener() { 
       public void actionPerformed(ActionEvent evt) { 
@@ -76,8 +76,6 @@ public class JFrameAdressbuch extends JFrame {
     cp.add(jButton3);
     jTextField1.setBounds(80, 56, 161, 25);
     cp.add(jTextField1);
-    jTextField2.setBounds(80, 96, 161, 25);
-    cp.add(jTextField2);
     jTextArea1ScrollPane.setBounds(72, 256, 169, 97);
     cp.add(jTextArea1ScrollPane);
     jLabel2.setBounds(8, 56, 67, 25);
@@ -86,6 +84,9 @@ public class JFrameAdressbuch extends JFrame {
     jLabel3.setBounds(8, 96, 67, 25);
     jLabel3.setText("Nummer");
     cp.add(jLabel3);
+    jNumberField1.setBounds(80, 96, 161, 25);
+    jNumberField1.setText("");
+    cp.add(jNumberField1);
     // Ende Komponenten
     
     setVisible(true);
@@ -97,15 +98,18 @@ public class JFrameAdressbuch extends JFrame {
     new JFrameAdressbuch();
   } // end of main
   
-  public void jButton1_ActionPerformed(ActionEvent evt) {
-    jTextArea1.setText(abuch.suche(jTextField1.getText()));
+  public String jButton1_ActionPerformed(ActionEvent evt) {
+    jTextArea1.setText(abuch.suche(jTextField1.getText())); 
+    return null;
   } // end of jButton1_ActionPerformed
 
-  public void jButton2_ActionPerformed(ActionEvent evt) {
-    abuch.nummerAnzeigen();
+  public String jButton2_ActionPerformed(ActionEvent evt) {
+    jTextArea1.setText(abuch.nummerAnzeigen(jTextField1.getText()));
+    return null;
   } // end of jButton2_ActionPerformed
 
-  public void jButton3_ActionPerformed(ActionEvent evt) {
-    abuch.sortiertEinfuegen();
+  public String jButton3_ActionPerformed(ActionEvent evt) {
+     jTextArea1.setText(abuch.sortiertEinfuegen(jTextField1.getText(), jNumberField1.getInt()));
+     return null;
   }  
 } // end of class JFrameAdressbuch
