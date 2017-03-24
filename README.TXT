@@ -1,16 +1,18 @@
-PROJEKTBEZEICHNUNG:
-Nutzung eines Adressbuches mithilfe der Klasse List.
+ in einer GPROJEKTBEZEICHNUNG:
+Nutzung eines Adressbuches in einem GUI mithilfe der Klasse List.
 
 PROJEKTZWECK:
 Schule/InfoLK
 
 VERSION oder DATUM:
-Aktuelle Version: 19.03.2017; 13:27 (MEZ)
+Aktuelle Version: 24.03.2017; 15:19 (MEZ)
 
 WIE IST DAS PROJEKT ZU STARTEN:
-Öffnen mit BlueJ oder Java.
-AUTOR(EN):
-Paul Jakob Seidenstuecker; Erik Nahthrath (bisher noch nicht)
+Öffnen mit derzeit mit dem Java-Editor.
+
+AUTOREN:
+Paul Jakob Seidenstuecker; Erik Nahthrath
 
 BENUTZERHINWEISE:
-Kann gerne genutzt werden, auch wenn sich die Nutzung in Grenzen hält. (It is not very useful)
+Das BlueJ-package ist veraltet und damit nicht nutzbar.
+The BlueJ-package is not the newest version. So don´t use it.
