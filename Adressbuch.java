@@ -1,6 +1,5 @@
 public class Adressbuch{
     private List<Kontakt> adressliste;
-    private List<Kontakt> ergebnisse;
 
     public Adressbuch(){
      adressliste = new List();
