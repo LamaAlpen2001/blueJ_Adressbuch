@@ -6,6 +6,13 @@ public class Adressbuch{
      adressliste.append(new Kontakt("Anna", 49345836));
      adressliste.append(new Kontakt("Bernt", 49778034));
      adressliste.append(new Kontakt("Justin", 493466645));
+     adressliste.append(new Kontakt("Gustav", 49367854));
+     adressliste.append(new Kontakt("Klara", 49985673));
+     adressliste.append(new Kontakt("Richard", 496762543));
+     adressliste.append(new Kontakt("Lena", 49446721));
+     adressliste.append(new Kontakt("Ole", 49763382));
+     adressliste.append(new Kontakt("Sara", 49113573));
+     adressliste.append(new Kontakt("Emil", 49200173));
     }
 
     /*public void kontaktHinzufuegen(Kontakt pKontakt){
